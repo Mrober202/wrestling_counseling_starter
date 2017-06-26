@@ -19,6 +19,7 @@ public class Subject {
         this.name = name;
         this.description = description;
         this.councelor_id = councelor_id;
+        this.id = id;
     }
 
     public String getName() {
@@ -67,7 +68,7 @@ public class Subject {
         SqlRunner.closeConnection();
     }
 
-    public void getCouselorDetails() {
+    public static void getCouselorDetails() {
         String sql = String.format
                 ("SELECT councelors.first_name, counselors.nick_name, counselors.last_name, " +
                         "counselors.telephone, counselors.email, counselors.member_since " +

@@ -20,7 +20,7 @@ public class Runner {
         Scanner reader = new Scanner(System.in);
         System.out.println("Please Choose the id of the Counselor you require.");
         int n = reader.nextInt();
-        System.out.println(n.findCouncelorById());
+        System.out.println(n.Subject.getCouselorDetails());
     }
 
 }

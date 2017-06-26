@@ -93,21 +93,4 @@ public class Councelor {
         SqlRunner.closeConnection();
     }
 
-    public static Councelor findCouncelorById(int id) {
-        Councelor councelor = null;
-        int sql = int.format("SELECT * FROM counselors WHERE id = %d;", id);
-        ResultSet rs = SqlRunner.executeQuery(sql);
-        try {
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String nameOfCouncelor = rs.getString("id");
-                councelor = new Councelor(id, nameOfCouncelor);
-            }
-        } catch (Exception ex) {
-            System.exit(0);
-        } finally {
-            SqlRunner.closeConnection();
-        }
-        return councelor;
-    }
 }
