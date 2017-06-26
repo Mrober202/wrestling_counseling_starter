@@ -19,7 +19,6 @@ public class Subject {
         this.name = name;
         this.description = description;
         this.councelor_id = councelor_id;
-        this.id = id;
     }
 
     public String getName() {
@@ -70,9 +69,9 @@ public class Subject {
 
     public static void getCouselorDetails(int id) {
         String sql = String.format
-                ("SELECT councelors.first_name, counselors.nick_name, counselors.last_name, " +
+                ("SELECT counselors.first_name, counselors.nick_name, counselors.last_name, " +
                         "counselors.telephone, counselors.email, counselors.member_since " +
-                        "FROM counselors JOIN subjects ON counselors.id = subjects.councelor_id " +
+                        "FROM counselors JOIN subjects ON counselors.id = subjects.counselor_id " +
                         "WHERE subjects.id = %d;", id);
         ResultSet rs = SqlRunner.executeQuery(sql);
         try {
