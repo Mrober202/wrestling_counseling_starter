@@ -68,12 +68,12 @@ public class Subject {
         SqlRunner.closeConnection();
     }
 
-    public static void getCouselorDetails() {
+    public static void getCouselorDetails(int id) {
         String sql = String.format
                 ("SELECT councelors.first_name, counselors.nick_name, counselors.last_name, " +
                         "counselors.telephone, counselors.email, counselors.member_since " +
                         "FROM counselors JOIN subjects ON counselors.id = subjects.councelor_id " +
-                        "WHERE subjects.id = %d;", this.id);
+                        "WHERE subjects.id = %d;", id);
         ResultSet rs = SqlRunner.executeQuery(sql);
         try {
             while (rs.next()) {
